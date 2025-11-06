@@ -11,3 +11,4 @@ license: mit
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+HuggingFace Spaces App URL: https://huggingface.co/spaces/atquiyaoni/Multilabel-DataScience-Tags-Classifier

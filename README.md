@@ -4,6 +4,6 @@ A multi-label text classification model from data collection, model training and
 ## Web Deployment
 Developed a Flask Webapp and deployed to Render. It takes data science questions as input and classifies the relevant tags associated with the question via HuggingFace API. Check out the web app from [here](https://multi-label-data-science-tags-classifier.onrender.com).
 
-1. The webapp takes data science questions as input:
+1. The Webapp takes data science questions as input and gives relevant tags as output:
 
 ![Flask App Tags Classifier](assets/render_deployed.png)

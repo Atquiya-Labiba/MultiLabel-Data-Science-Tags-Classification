@@ -5,8 +5,8 @@ A multi-label text classification model that predicts relevant tags for Data Sci
 ## Data Collection and Preprocessing
 Data was collected from [here](https://datascience.stackexchange.com/) in two steps.
 
-1. **Question URLs Scraping:** The datascience question URLs along with the question titles were scraped with [this notebook](/scraper/question_url_scraper.py). You can find the stored csv from [here](/data/ques_urls.csv).
-2. **Question Details Scraping:** For each of the question URL in `quest_urls.csv`, the question details (title, URL, description, tags) were scraped with [this notebook](/scraper/question_details_scraper.py). You can find the stored csv from [here](/data/ques_details.csv).
+1. **Question URLs Scraping:** The datascience question URLs and their corresponding titles were scraped using the script [this notebook](/scraper/question_url_scraper.py). The dataset is available [here](/data/ques_urls.csv).
+2. **Question Details Scraping:** For each URL listed in `ques_urls.csv` the question details (title, URL, description, tags) were scraped with [this notebook](/scraper/question_details_scraper.py). The complete dataset is stored in [here](/data/ques_details.csv).
 
 In total, **24,500** datascience question details were scraped.
 
@@ -91,15 +91,13 @@ Three models were trained and later compressed using ONNX. The table below summa
 </table>
 
 ## Model Deployment
-The distilroberta-base model outperformed other models and achieved 98% accuracy and F1-Score(Micro) of 41%. Hence this model was deployed to HuggingFace Spaces Gradio App. The implementation can be found in deployment [folder](/deployment/) or [here](https://huggingface.co/spaces/atquiyaoni/Multilabel-DataScience-Tags-Classifier).
+The distilroberta-base model outperformed other models and achieved 98% accuracy and F1-Score(Micro) of 42%. Hence this model was deployed to HuggingFace Spaces Gradio App. The implementation can be found in [deployment](/deployment/) or [here](https://huggingface.co/spaces/atquiyaoni/Multilabel-DataScience-Tags-Classifier).
 
 ![Data Science Tags Classifier](assets/huggingface_model.png)
 
 ## 🌐 Web Deployment
 
 Developed a Flask Webapp and deployed to Render. It takes data science questions as input and classifies the relevant tags associated with the question via HuggingFace API. Check out the web app from [here](https://multi-label-data-science-tags-classifier.onrender.com/).
-
-The Webapp takes data science questions as input and gives relevant tags as output:
 
 ![Flask App Data Science Tags Classifier](assets/render_deployed.png)
 
